@@ -1,0 +1,40 @@
+.singleProduct {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+
+    &__img {
+        width: 200px;
+        height: 300px;
+    }
+    &__h2 {
+        padding-top: 10px;
+    }
+    &__h3 {
+        padding-top: 10px;
+    }
+    &__h4 {
+        padding-top: 10px;
+    }
+    &__p {
+        padding-top: 10px;
+        text-align: center;
+        max-width: 300px;
+    }
+    &__btn {
+        margin: 10px 10px;
+        background-color: white;
+        color: #212121;
+        border: 1px solid #333333;
+        border-radius: 30px;
+        padding: 12px 20px;
+        transition: 0.25s;
+        cursor: pointer;
+        &:hover {
+            background-color: #333333;
+            color: white;
+        }
+    }
+}

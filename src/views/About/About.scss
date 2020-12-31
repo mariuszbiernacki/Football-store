@@ -1,0 +1,29 @@
+.about {
+  &__h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: rgb(179, 170, 170);
+  }
+  &__h2 {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  &__div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    height: 200px;
+    margin: 20px;
+  }
+  &__p {
+    width: 40%;
+  }
+}

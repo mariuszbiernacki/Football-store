@@ -1,0 +1,43 @@
+.navbar {
+    
+    &__list {
+        background-color: #212121;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        list-style: none;
+        font-family: sans-serif;
+        margin-bottom: 50px;
+    }
+    &__item {
+        margin: 0 10px;
+    }
+    &__link {
+        display: block;
+        padding: 13px 20px;
+        color: white;
+        text-decoration: none;
+        
+    }
+    &-cart__btn {
+        background-image: url('../../assets/icons/shopping-bag.svg');
+        background-size: 70%;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+        border: none;
+        outline: none;
+        border-radius: 50%; 
+        position: relative;
+        cursor: pointer;
+    }
+    &-cart__counter {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 16px;
+    }
+}
