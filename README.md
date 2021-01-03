@@ -1,3 +1,14 @@
+### 🔧 Technology Stack
+
+- React.js
+- Styled-Components
+
+# Football store
+
+<br />
+link to demo version: https://react-football-store.netlify.app/
+<br />
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
