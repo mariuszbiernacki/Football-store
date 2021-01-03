@@ -6,12 +6,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import "./FilterMenu.scss";
-{
-  /* <div className="filter-menu__checkbox">
-                <label htmlFor="deliveryOption">check free delivery </label>
-                <input onChange={setCheckbox} type="checkbox" name="deliveryOption" id="deliveryOption" checked={freeDelivery && true} />
-            </div> */
-}
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -105,7 +99,6 @@ const FilterMenu = () => {
               id="deliveryOption"
               checked={freeDelivery && true}
             />
-            {/* checked={freeDelivery ? true : false}  */}
           </div>
         </div>
       ) : (

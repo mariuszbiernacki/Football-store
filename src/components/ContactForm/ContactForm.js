@@ -20,7 +20,6 @@ const ContactForm = () => {
         }}
         validationSchema={validSchema}
         onSubmit={(values) => {
-          console.log(values);
           values.email = "";
           values.message = "";
         }}

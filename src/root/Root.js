@@ -11,7 +11,6 @@ import ShopContext from "../context/context";
 import "./Root.css";
 
 const Root = () => {
-  // local storage
   const getCartFromLocalStorage = () => {
     let localStorageCart;
 
@@ -35,18 +34,15 @@ const Root = () => {
     return localStorageCartCounter;
   };
 
-  // starting states
   const [products, setProducts] = useState([]);
   const [welcomeSlogan, setWelcomeSlogan] = useState("");
   const [indexTimeout, setIndexTimeout] = useState(0);
-  //cart states
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cart, setCart] = useState(getCartFromLocalStorage());
   const [cartCounter, setCartCounter] = useState(
     getCartCounterFromLocalStorage()
   );
   const [total, setTotal] = useState(0);
-  // filter states
   const [price, setPrice] = useState(0);
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(0);
@@ -56,11 +52,8 @@ const Root = () => {
   const [freeDelivery, setFreeDelivery] = useState(false);
   const [filtersVisibility, setFiltersVisibility] = useState(false);
 
-  //local storage functions
-
   const setCartToLocalStorage = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
-    console.log("localStorage22", localStorage);
   };
 
   const setCartCounterToLocalStorage = () => {
@@ -71,8 +64,6 @@ const Root = () => {
     setCartToLocalStorage();
     setCartCounterToLocalStorage();
   }, [cart, cartCounter]);
-
-  // Welcome Slogan Interval
 
   const WelcomeSloganInterval = () => {
     let beginSlogan = "";
@@ -122,8 +113,6 @@ const Root = () => {
     setWelcomeSlogan("welcome to our store");
   };
 
-  // get data from cms
-
   useEffect(() => {
     client
       .getEntries({
@@ -138,8 +127,6 @@ const Root = () => {
       })
       .catch((error) => error);
   }, []);
-
-  // cart functions
 
   const handleCartOpen = () => {
     setIsCartOpen(true);
@@ -232,8 +219,6 @@ const Root = () => {
     }
   };
 
-  // filter functions
-
   const seeFilters = () => {
     setFiltersVisibility(!filtersVisibility);
   };
@@ -249,7 +234,6 @@ const Root = () => {
   };
 
   const getPriceForFilters = () => {
-    console.log("products", products);
     let maxPrice = Math.max(...products.map((product) => product.productPrice));
     setPrice(maxPrice);
     setMax(maxPrice);
@@ -274,13 +258,10 @@ const Root = () => {
   const sortProducts = () => {
     let tempProducts = [...products];
 
-    //by price
     let tempPrice = parseInt(price);
     tempProducts = tempProducts.filter(
       (product) => product.productPrice <= tempPrice
     );
-
-    //by search input
 
     if (search.length !== 0) {
       tempProducts = tempProducts.filter((product) => {
@@ -294,8 +275,6 @@ const Root = () => {
       });
     }
 
-    // by ligue
-
     if (ligue !== "all") {
       tempProducts = tempProducts.filter((product) => {
         return product.productCategory === ligue;
@@ -304,7 +283,6 @@ const Root = () => {
       setFilteredProducts([...products]);
     }
 
-    // by free delivery option
     if (freeDelivery) {
       tempProducts = tempProducts.filter((product) => {
         return product.productFreeDelivery === true;
